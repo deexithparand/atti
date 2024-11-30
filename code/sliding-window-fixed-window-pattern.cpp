@@ -6,7 +6,7 @@
 
 // we already know the size of window
 
-[problem link](https://www.geeksforgeeks.org/problems/max-sum-subarray-of-size-k5313/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=practice_card)
+// problem link : (https://www.geeksforgeeks.org/problems/max-sum-subarray-of-size-k5313/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=practice_card)
 
 // solution 
 class Solution {
