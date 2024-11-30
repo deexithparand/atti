@@ -1,8 +1,8 @@
 //  Refer For Plan https://gist.github.com/deexithparand/efcb680d363367d78ef07590be0cdc3a
 
-// Max Sum Subarray of size K
+// longest-sub-string-with-k-distinct-characters
 
-// Pattern : can clearly see it's a fixed window size
+// Pattern : can clearly see it's a variable window size
 
 // variable window size
 
