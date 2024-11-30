@@ -2,6 +2,8 @@
 
 // NO sliding window - non negative numbers included
 
+// https://leetcode.com/problems/subarray-sum-equals-k/?source=submission-noac
+
 // Prefix Sum + Hashmap Approach Pattern - involving sums of subarrays or dynamic window sizes
 
 class Solution {
