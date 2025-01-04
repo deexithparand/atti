@@ -1,35 +1,52 @@
-#include<bits/stdc++.h>
+//{ Driver Code Starts
+#include <bits/stdc++.h>
 using namespace std;
 
-void display(vector<int> v){
-    for(int i=0; i<v.size(); i++) cout<<v[i]<<" ";
-    cout<<endl;
-}
 
-// reverse an array using recursion
-vector<int> reverse(vector<int> v, int left, int right){
-    if(left>right){
-        return v;
+// } Driver Code Ends
+// User function template for C++
+
+class Solution {
+  public:
+    bool check(string &s, int left, int right){
+        if(left>right){
+            return true;
+        }
+        
+        if(s[left] != s[right]) return false;
+        
+        return check(s, left+1, right-1);
     }
     
-    int t = v[right];
-    v[right] = v[left];
-    v[left] = t;
-    
-    return reverse(v, left+1, right-1);
-} 
+    // Function to check if a string is a palindrome.
+    bool isPalindrome(string &s) {
+        return check(s, 0, s.size()-1);
+    }
+};
 
-int main(){
-    vector<int> v{5,4,2,3,1};
-    
-    cout<<"before : ";
-    display(v);
-    
-    // reverse the same array
-    vector<int> rv = reverse(v,0, v.size()-1);
-    
-    cout<<"after : ";
-    display(rv);
-    
+//{ Driver Code Starts.
+
+int main() {
+    ios_base::sync_with_stdio(0);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
+    int t;
+    cin >> t; // Read the number of test cases
+    while (t--) {
+        string s;
+        cin >> s; // Read the string
+
+        Solution ob; // Create an instance of Solution
+        if (ob.isPalindrome(s)) {
+            cout << "true"; // Print true if palindrome
+        } else {
+            cout << "false"; // Print false if not a palindrome
+        }
+        cout << "\n~\n"; // Print newline after each result
+    }
+
     return 0;
 }
+
+// } Driver Code Ends
