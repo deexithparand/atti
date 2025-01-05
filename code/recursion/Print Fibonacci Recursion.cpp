@@ -1,24 +1,44 @@
-// not completed yet, need to learn tabulation method
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
-// print fibonacci using recursion - different from getting a nth fibonacci
-int fibonacci(int n){
-    if(n<=1) return n;
+int fibonacci(int n, vector<int> &memo){
+    if(n<=1){
+        memo[n] = n;
+        return n;
+    } 
     
-    int left = fibonacci(n-1);
-    int right = fibonacci(n-2);
+    if(memo[n]!=-1){
+        return memo[n];
+    }
     
-    return  left + right;
+    int leftc = fibonacci(n-1, memo);
+    int rightc = fibonacci(n-2, memo);
+    
+    memo[n] = leftc + rightc;
+    
+    return memo[n];
 }
 
-int main()
-{
+int main(){
     int n;
     cin>>n;
-    unordered_map<int,bool> hm;
     
-    fibonacci(n);
+    // create a memoization table
+    vector<int> memo(n+1,-1); // missed the n+1 for 0 based indexing
     
-    return 0;
+    for(auto i : memo){
+        cout<<i<<" ";
+    }
+    
+    cout<<endl;
+    
+    
+    fibonacci(n, memo);
+    
+    for(auto i : memo){
+        cout<<i<<" ";
+    }
+    
 }
+
+// done using memoizaiton - need to refine better
